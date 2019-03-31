@@ -1,9 +1,10 @@
 digraph "Base"
 {
+	graph [dpi=150];
 	ranksep=equally;
-	ratio= 0.4;
+	ratio= 0.42;
 	rankdir = "BT";
-	node [shape=box width=3 height=2 labelloc=b fontsize=18];
+	node [shape=box width=4 height=3 labelloc=b fontsize=18];
 	{
 		node [color = green];
 		"Microscale Manufacturing" [label="Microscale\nManufacturing\n10"];
