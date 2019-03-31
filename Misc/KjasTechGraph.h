@@ -3,19 +3,21 @@ digraph "Base"
 	ranksep=equally;
 	ratio= 0.4;
 	rankdir = "BT";
-	node [shape=box width=3 height=2 labelloc=b];
+	node [shape=box width=3 height=2 labelloc=b fontsize=18];
 	{
 		node [color = green];
 		"Microscale Manufacturing" [label="Microscale\nManufacturing\n10"];
 		"Cultural Understanding" [label="Cultural\nUnderstanding\n9"];
 		"Agricultural Understanding" [label="Agricultural\nUnderstanding\n8"];
 		"Genetic Modification" [label="Genetic\nModification\n12"];
+		"Information Pool" [label="Informaton Pool\nUnderstanding\n13"];
 	}
+	"Microscale Manufacturing"
+	"Cultural Understanding" -> "Cultural Unification";
 	"Hyperspace Mining" [label="Hyperspace\nMining\n4"];
 	"Universal Translator" [label="Universal\nTranslator\n6"];
-	"Information Pool" [label="Informaton Pool\nUnderstanding\n11"];
 	"Industrial Understanding" [label="Industrial\nUnderstanding\n8"];
-	Terraforming [shape=Msquare label="Terraforming\n\nYou may colonize lone ice\nworlds. This costs the Kt'zr'kt'rtl\nCost +3.\nEvery 3 ice worlds are\nworth one point\n\n35"];
+	Terraforming [shape=Msquare label="Terraforming\n\nYou may colonize lone ice\nworlds. This costs the Kt'zr'kt'rtl\nCost +3.\nEvery 3 ice worlds are\nworth one point\n\n30"];
 	"Genetic Engineering" [label="Genetic\nEngineering\n8"];
 	"Cultural Unification" [label="Cultural\nUnification\n5"];
 	Nanotechnology [label="Nanotechnology\n6"];
@@ -25,12 +27,12 @@ digraph "Base"
 	"Agricultural Understanding" -> Terraforming;
 	"Genetic Modification" -> "Genetic Engineering";
 	"Genetic Engineering" -> Terraforming;
-	"Cultural Understanding" -> "Cultural Unification";
+	
 	"Microscale Manufacturing" -> Nanotechnology;
 	"Hyperspace Understanding" -> Nanotechnology;
 	
 	
-	node [shape=hexagon width=.5 height=.5 labelloc=b];
+	node [shape=hexagon width=.5 height=.5 labelloc=b fontsize=18];
 	"Advanced Hyperdrives" [shape=doubleoctagon label="Advanced\nHyperdrives\n4"];
 	
 	{
@@ -42,12 +44,14 @@ digraph "Base"
 	}
 	
 	{
-		rank = same;
+		node [color = green]
 		Command [color = green label="Command\n10"];
 		"Bulk Hyperdrive" [label="Bulk\nHyperdrive\n13"];
 		"Battlestation" [color = green label="Battlestation\n23"];
 		Shipyard [color = green label="Shipyard\n5"];
 		Diplomats [color = green label="Diplomats\n6"];
+		Destroyer [label="Destroyer\n7"];
+		Lancer [label="Lancer\n7"];
 	}
 	"Hyperdrive 2" [label="Advanced\nLight Hyperdrive\n15"];
 	"Escort 2" [label="Advanced\nEscort\n9"];
@@ -66,14 +70,14 @@ digraph "Base"
 	"Armored Hyperdrive" [label="Armored\nHyperdrive\n11"];
 	"Armored Hyperdrive 2" [label="Advanced\nArmored Hyperdrive\n11"];
 	Turtle [label="Turtle\n6"];
-	"Turtle 2" [label="Advanced\nTurtle\n15"];
+	"Turtle 2" [label="Advanced\nTurtle\n6"];
 	Dreadnought [label="Dreadnought\n25"];
 	"Dreadnought 2" [label="Advanced\nDreadnought\n12"];
-	Lancer [label="Lancer\n7"];
+	
 	"Lancer 2" [label="Advanced\nLancer\n4"];
-	Battleship [label="Battleship\n10"];
+	Battleship [label="Battleship\n12"];
 	"Battleship 2" [label="Advanced\nBattleship\n6"];
-	Destroyer [label="Destroyer\n8"];
+	
 	"Destroyer 2" [label="Advanced\nDestroyer\n6"];
 	"Planetary Shield" [label="Planetary\nShield\n11"];
 	"Research Center" [label="Research\nCenter\n17"];
@@ -101,19 +105,18 @@ digraph "Base"
 	}
 
 	Command -> {"Drone Carrier" Interdictor "Dreadnought 2"};
-	Hyperdrive -> {"Bulk Hyperdrive" "Armored Hyperdrive"};
 	"Bulk Hyperdrive 2" -> "Advanced Hyperdrives" [headlabel="or"];
 	"Hyperdrive 2"-> "Advanced Hyperdrives";
 	"Advanced Hyperdrives" -> {Interdictor "Hyperspace Understanding" "Hyperspace Mining" Cruiser "Armored Hyperdrive 2"};
 	"Armored Hyperdrive 2" ->"Cruiser 2";
 	Battlestation -> Turtle;
 	Turtle -> {"Interdictor 2" "Command 2" "Armored Hyperdrive" "Dreadnought" "Battleship 2" "Diplomats 2"};
-	Escort ->{Lancer Destroyer};
-	Lancer -> {Cruiser Dreadnought "Battlestation 2" Battleship};
+	Lancer -> {"Cruiser 2" Dreadnought "Battlestation 2" Battleship "Turtle 2"};
 	Destroyer -> {"Battlestation 2" Battleship};
 	"Colony Ship 2" -> {"Planetary Shield" "Research Center"};
 	"Planetary Shield" -> "Escort 2";
-	"Research Center" -> {"Universal Translator" "Information Pool" "Cultural Unification" Terraforming};
+	"Research Center" -> {"Universal Translator" "Cultural Unification" Terraforming};
 	Shipyard -> {"Mobile Shipyard" "Industrial Understanding"};
 	Diplomats -> "Universal Translator";
+	"Information Pool" -> Terraforming;
 }
