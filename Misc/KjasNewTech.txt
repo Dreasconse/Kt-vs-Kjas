@@ -1,0 +1,57 @@
+Goals:
+	Make Kjas tech less of an informaitonal overload
+	Slightly slow the Kjas early game and speed up their lategame
+	Add in variability to how the Kjas plan their tech while keeping it in a reasonable bounds of randomness for the Kjas
+		(i.e. minimal amounts of input randomness)
+	Increase the Kjas interaction with aliens
+	Preserve the general tech tree
+
+Kjas techs turned into cards
+	Advanced versions of the tech are on the bottom (flipside)
+	Advanced techs automatically flip to their advanced research side if the basic side is completed
+Military and economic cards and hands (hidden)
+1 military, 1 economic, and 1 wild action per turn
+At the end of the tech phase, the Kjas may discard as many cards as they would like to draw that many of the same type. 
+Deck is shuffled if the Kjas player goes to draw and there are no cards. 
+Techs are invented if they have enough points on them to invent them at the end of the tech phase
+
+Each action can:
+	- Draw a card from a research deck.
+	- Play a card you did not draw this turn from your hand into active research
+	- Put 2 tech points on a card that hasn't had an action performed on it this turn
+	- (wild only) put one tech point on a card that has had an action performed on it this turn
+Expertise:
+	- Cards have expertise requirements that must be met in order to play or put points into them
+	- Most cards grant expertise. 
+	- Any expertise the Kjas have beyond the requirements reduce the tech's cost by 1 per
+	- Types of expertise
+		Heavy Armor
+		Advanced Damage
+		Hyperdrive
+		Organization
+		Research
+		Construction
+	- Aliens can give +expertise
+		- Faderan: + Hyperdrive at cooperation and another at alliance
+		- Yengii: + Heavy armor on hands
+		- Zeth: +Something (Advanced Damage?) in intelligence network way further down then you want to be 
+		- Caylion: +Construction at alliance
+			Add 1 food for the Kt to make it slightly more balanced between the two
+		- Eni Et: +Organization at friendship
+			Friendship should cost 4 instead of 3
+		- Im'Dril: 
+			Iridium Grace: +1 Cooperation in alliance, only 1 small ship build
+			Void Deliverance: +1 Damage in alliance, only 1 small ship build
+		- Unity: +Research if at least Awareness 3 and controlled by the Kjas
+		
+Starting Hand:
+	Military: 
+		- Battlestations
+		- Lancers
+		- Advanced Hyperdrive
+		- 1 Draw
+	Economy: 
+		- Shipyards
+		- Advanced Colonizers
+		- Diplomats
+		- 1 Draw
